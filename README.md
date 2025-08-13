@@ -10,10 +10,8 @@ Dataset yang digunakan dalam proyek ini adalah **Vegetable Image Dataset** yang 
 
 ## Struktur File
 
-- **`Dataset/`**: Direktori ini berisi gambar sayuran yang telah dibagi menjadi tiga set: `train` (untuk melatih model), `validation` (untuk validasi selama training), dan `test` (untuk menguji performa model).
-- **`saved_model/`**: Direktori penyimpanan model TensorFlow dalam format SavedModel setelah proses training selesai.
 - **`main.ipynb`**: Jupyter Notebook utama yang berisi semua langkah, mulai dari pra-pemrosesan data, pembuatan arsitektur model, proses training, evaluasi, hingga konversi model.
-- **`model.tflite`**: Model yang telah dikonversi ke format TensorFlow Lite. Format ini dioptimalkan untuk *deployment* pada perangkat *mobile* atau *edge*.
+- **`convert_model_tensorflowjs.ipynb`**: Notebook terpisah untuk mengonversi model yang sudah dilatih ke format TensorFlow.js, yang memungkinkan model untuk dijalankan langsung di web browser.
 - **`requirements.txt`**: File yang berisi daftar semua *library* Python yang dibutuhkan untuk menjalankan proyek ini.
 - **`README.md`**: File dokumentasi ini.
 
@@ -59,3 +57,4 @@ Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah ber
 Proyek ini menghasilkan dua format model utama:
 1.  **TensorFlow SavedModel**: Tersimpan di dalam direktori `saved_model/`. Ini adalah format standar untuk menggunakan model dengan ekosistem TensorFlow.
 2.  **TensorFlow Lite (`.tflite`)**: File `model.tflite` adalah model yang lebih ringan dan cocok untuk aplikasi *mobile* (Android/iOS) atau perangkat IoT.
+3. **TensorFlow.js Web Model**: Dihasilkan oleh `convert_model_tensorflowjs.ipynb`. Format ini terdiri dari beberapa file (model.json dan file *.bin) yang dirancang untuk dieksekusi langsung pada aplikasi web berbasis JavaScript.
